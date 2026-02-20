@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Student>students = new ArrayList<>();
+
         int choice;
 
         while (true){
@@ -36,7 +37,7 @@ public class Main {
                     int studentId = sc.nextInt();
                     boolean found = false;
                     for (Student s: students){
-                        if (s.id==studentId){
+                        if (s.getId()==studentId){
                             found = true;
                             s.display();
                         }
