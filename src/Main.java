@@ -11,7 +11,9 @@ public class Main {
             System.out.println("1. Add Student");
             System.out.println("2. Display Students");
             System.out.println("3. Search Student");
-            System.out.println("4. Exit");
+            System.out.println("4. Update Marks");
+            System.out.println("5. Delete Student");
+            System.out.println("6. Exit");
             System.out.println("Enter Your choice..");
             choice = sc.nextInt();
 
@@ -43,13 +45,52 @@ public class Main {
                         }
 
                     }
-                    if (found==false) {
+                    if (!found) {
                         System.out.println("Student not found");
                     }
                     break;
 
 
                 case 4:
+                    System.out.println("Enter Student Id");
+                    int studentId1 = sc.nextInt();
+                    boolean updated = false;
+                    for (Student s: students){
+                        if (s.getId()==studentId1){
+                            System.out.println("Enter New Marks");
+                            double newMarks = sc.nextDouble();
+                            s.setMarks(newMarks);
+                            updated = true;
+                            System.out.println("Marks updated successfully!");
+
+                            break;
+                        }
+
+                    }
+                    if (!updated){
+                    System.out.println("Student Not found");
+                }
+                    break;
+
+
+                case 5:
+                    System.out.println("Enter Student Id");
+                    int studentId2 = sc.nextInt();
+                    boolean deleted = false;
+                    for (int i = 0; i<students.size();i++){
+                        if (students.get(i).getId()==studentId2){
+                            students.remove(i);
+                            deleted = true;
+                            System.out.println("Deleted Successfully");
+                            break;
+                        }
+                    }
+                    if (!deleted){
+                        System.out.println("Student Not Found");
+                    }
+                    break;
+
+                case 6:
                     System.out.println("Exiting for the program...");
                     return;
 
