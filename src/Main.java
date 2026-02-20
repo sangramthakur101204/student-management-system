@@ -9,7 +9,8 @@ public class Main {
         while (true){
             System.out.println("1. Add Student");
             System.out.println("2. Display Students");
-            System.out.println("3. Exit");
+            System.out.println("3. Search Student");
+            System.out.println("4. Exit");
             System.out.println("Enter Your choice..");
             choice = sc.nextInt();
 
@@ -31,6 +32,23 @@ public class Main {
                     break;
 
                 case 3:
+                    System.out.println("Enter Student Id");
+                    int studentId = sc.nextInt();
+                    boolean found = false;
+                    for (Student s: students){
+                        if (s.id==studentId){
+                            found = true;
+                            s.display();
+                        }
+
+                    }
+                    if (found==false) {
+                        System.out.println("Student not found");
+                    }
+                    break;
+
+
+                case 4:
                     System.out.println("Exiting for the program...");
                     return;
 
