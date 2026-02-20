@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -12,16 +13,15 @@ public class Main {
         double marks = sc.nextDouble();
         Student student = new Student(id,name,marks);
 
-        student.display();
+        ArrayList<Student>students = new ArrayList<>();
+        students.add(student);
+
+       for (Student s : students){
+          s.display();
+       }
 
 
-//        Student[] students = new Student[3];
-//        students[0] = new Student(2,"om",88);
-//        students[1] = new Student(3,"chhavi",90);
-//        students[2] = new Student(4,"gargi",69);
-//
-//        for (int i =0;i<students.length;i++){
-//           students[i].display(); }
+
 
     }
 }
